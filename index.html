@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#f7f0e1" />
+  <title>Postcards from Bharat</title>
+  <script type="module" crossorigin src="./assets/index-3jnWvVsL.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-DoBFAJGK.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-CmU8SPRH.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="loading">
+    <div class="card">
+      <svg width="210" height="150" viewBox="0 0 210 150" role="img" aria-label="Hand-drawn postcard">
+        <defs>
+          <filter id="wobble" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="n" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="4" />
+          </filter>
+        </defs>
+        <g filter="url(#wobble)">
+          <rect x="16" y="14" width="178" height="122" rx="8" fill="#fffdf6" stroke="#7a2e2e" stroke-width="3.5" />
+          <line x1="106" y1="22" x2="106" y2="128" stroke="#7a2e2e" stroke-width="2" stroke-dasharray="6 5" />
+          <rect x="118" y="28" width="58" height="46" fill="#f3e2c2" stroke="#2e8f86" stroke-width="2.5" />
+          <circle cx="147" cy="46" r="8" fill="#e8a33d" />
+          <path d="M122 70 L138 54 L152 66 L164 56 L172 70 Z" fill="#2e8f86" />
+          <path d="M30 46 q9 -5 18 0 t18 0 t18 0" stroke="#5a5148" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M30 62 q9 -5 18 0 t18 0 t18 0" stroke="#5a5148" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M30 78 q9 -5 18 0 t18 0" stroke="#5a5148" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M128 92 q9 -5 18 0 t18 0" stroke="#5a5148" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M128 108 q9 -5 18 0 t18 0" stroke="#5a5148" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          <path d="M44 104 c-5 -7 -16 -3 -11 6 l11 9 11 -9 c5 -9 -6 -13 -11 -6" fill="#c0392b" />
+        </g>
+      </svg>
+      <h1>Postcards from Bharat</h1>
+      <p class="tag">a tiny world with a lot of heart</p>
+      <div class="bar"><div class="fill"></div></div>
+      <p class="status">Packing the mailbag&hellip;</p>
+    </div>
+  </div>
+
+  <div id="hud">WASD / arrows &mdash; walk &nbsp;&middot;&nbsp; Space &mdash; hop &nbsp;&middot;&nbsp; drag &mdash; look around</div>
+  <div id="joy"><div id="joy-knob"></div></div>
+
+  <button id="pause-btn" aria-label="Pause game">&#10074;&#10074;</button>
+
+  <div id="pause" hidden>
+    <div class="panel" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+      <h2 id="pause-title">Paused</h2>
+      <ul class="controls">
+        <li><b>WASD / arrows</b> &mdash; walk</li>
+        <li><b>Space</b> &mdash; hop</li>
+        <li><b>E</b> &mdash; talk to neighbour</li>
+        <li><b>drag / right-side touch</b> &mdash; look around</li>
+        <li><b>Esc / P</b> &mdash; pause</li>
+      </ul>
+      <label class="setting"><input type="checkbox" id="set-reduced" /> Reduce motion</label>
+      <label class="setting"><input type="checkbox" id="set-music" /> Mute music</label>
+      <label class="setting"><input type="checkbox" id="set-sfx" /> Mute sounds</label>
+      <button id="resume-btn">Resume</button>
+    </div>
+  </div>
+
+</body>
+</html>
