@@ -31,7 +31,8 @@ export function latLonToDir(
   lonDeg: number,
   out = new THREE.Vector3(),
 ): THREE.Vector3 {
-  out.set(lonDeg * DEG, 0, -latDeg * DEG);
+  // Plane coords are in DEGREES (1 unit = 1°). Do NOT scale by DEG.
+  out.set(lonDeg, 0, -latDeg);
   return out;
 }
 
