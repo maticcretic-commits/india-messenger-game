@@ -46,11 +46,12 @@ export function terrainHeight(pos: THREE.Vector3): number {
   let h = (n - 0.5) * 2.4 + (d - 0.5) * 0.6;
   const m = lakeMask(pos);
   h = h * (1 - m) - m * 1.1; // carve the lake basin (below water shell)
-  // Himalayan foothills rise toward the north pole
-  const lat = -z;
-  if (lat > 55) h += (lat - 55) * 0.12;
   // Flatten the Himalayan village plateau (post office, houses, roads)
   h = flattenVillage(pos, h);
+  // Himalayan foothills rise toward the north pole (after flattening so the
+  // village plateau rides up with the range instead of being wiped out).
+  const lat = -z;
+  if (lat > 55) h += (lat - 55) * 0.12;
   return h;
 }
 
@@ -74,7 +75,7 @@ const GRASS_A = new THREE.Color(0x7a8c3f); // olive wash
 const GRASS_B = new THREE.Color(0x8fa04a); // lighter olive
 const SAND = new THREE.Color(0xc9a86a); // warm tan
 const ROCK = new THREE.Color(0xa8895a); // shadowed tan
-const SNOW = new THREE.Color(0xf5ead0); // cream (not blue-white)
+const SNOW = new THREE.Color(0xf2f6fa); // snowy white (matches himalaya biome)
 const WATER = new THREE.Color(0x0f6f7a); // deep teal
 
 // Himalaya zone center (plane: lat 72, lon 0 -> x=0, z=-72).
